@@ -1,0 +1,44 @@
+# Базовые настройки проекта
+project:
+  name: "ruvlm-bench"
+  version: "1.0.0"
+  author: "Polina Krasnova"
+
+# Настройки модели
+model:
+  vision_encoder: "openai/clip-vit-base-patch32"
+  language_model: "ai-forever/rugpt3small_based_on_gpt2"
+  projection_dim: 768
+  use_qlora: false  # Для Mac M2 лучше false
+
+# Настройки данных
+data:
+  datasets:
+    - "deepvk/gqa-ru"
+    - "deepvk/mmbench-ru"
+  max_samples: 10000  # Для теста на Mac
+  image_size: 224
+  batch_size: 4  # Маленький batch для Mac
+  num_workers: 2  # Для Mac
+
+# Настройки обучения
+training:
+  epochs: 5
+  learning_rate: 2e-5
+  warmup_steps: 100
+  gradient_accumulation_steps: 8  # Эмулирует большой batch
+  max_grad_norm: 1.0
+  save_every: 1
+
+# Настройки устройства
+device:
+  use_mps: true
+  mixed_precision: true
+  memory_limit: 0.7  # 70% от доступной памяти
+
+# Пути
+paths:
+  data_dir: "./data"
+  models_dir: "./results/models"
+  logs_dir: "./logs"
+  checkpoints_dir: "./results/checkpoints"

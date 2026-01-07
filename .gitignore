@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# IDE - ВАЖНО: игнорируем файлы PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Dataset cache - ВАЖНО: не коммитаем данные
+data/
+!data/README.md
+
+# Results and logs - ВАЖНО: не коммитаем результаты
+results/
+!results/README.md
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python specific
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.tox/
+
+# HuggingFace cache
+.cache/
+.huggingface/
+
+# Training checkpoints - ВАЖНО
+*.pt
+*.pth
+*.bin
+*.safetensors
